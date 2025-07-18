@@ -1,43 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://pbsi.xyz/style.css"/>
-    <title>Document</title>
-    <style>
-        body {
-            padding-left: 30px;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Propsik SMP</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+      color: #f0f0f0;
+    }
+    header {
+      background-color: #1b1b1b;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #4caf50;
+    }
+    main {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .item {
+      background-color: #292929;
+      margin-bottom: 30px;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    }
+    .item h2 {
+      color: #ffca28;
+      margin-top: 0;
+    }
+    .recipe {
+      margin-top: 15px;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 70px);
+      gap: 10px;
+    }
+    .slot {
+      width: 70px;
+      height: 70px;
+      background: linear-gradient(to bottom, #6b6b6b, #4a4a4a);
+      border: 3px solid #1a1a1a;
+      box-shadow: inset 0 0 4px rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      color: #fff;
+      text-align: center;
+      position: relative;
+    }
+    .slot::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+    .slot[title]:hover::after {
+      content: attr(title);
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #000;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 4px;
+      font-size: 12px;
+      white-space: nowrap;
+      z-index: 10;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.5);
+    }
+    .arrow {
+      font-size: 40px;
+      color: #ffca28;
+    }
+    .output-slot {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-left: 20px;
+    }
+    .output-slot .slot {
+      border: 3px solid #ffca28;
+    }
+    .output-name {
+      margin-top: 8px;
+      font-weight: bold;
+      color: #ffca28;
+    }
+    .slot img {
+        width: 70px;
+        height: 70px;
+    }
+  </style>
 </head>
 <body>
-    <h2>Looking for people to start & maintain my new private SMP</h2>
-    <p>I want to keep this server running for potentially more than an average smp is (>2 weeks) <br>this isn't going to be a normal SMP, i've added some custom items and i'm looking for creative people <br> who will give me some more custom item ideas and keep the server fun.</p>
-    <br>
-    <p>You don't have to code in java, but if you are skilled enough i'd be happy to have a helper</p>
-    <p>here's some custom items that I already made!</p>
-    <img src="resources/image.png" alt=""> <br>
-    <h3>Heart core - used to make the Lifesteal Sword</h3>
-    <img src="resources/image2.png" alt=""> <br>
-    <img src="resources/image3.png" alt=""> <br>
-    <img src="resources/image4.png" alt=""> <br>
-    <img src="resources/image5.png" alt=""> <br>
-    <img src="resources/image6.png" alt=""> <br>
-    <h3>Fire armor (all pieces are there)</h3>
-    <img src="resources/image7.png" alt=""> <br>
-    <img src="resources/image8.png" alt=""> <br>
-    <br>
-    <footer>
-        If you are interested shoot me a DM on discord @31ms <br>
-        You can play if you work on the server as well.
-        <br>
-        Requirements:
-        <ul>
-            <li>Must be 13+ years old</li>
-            <li>Must be friended with me on discord</li>
-            <li>Must communicate with me about the SMP, help me do stuff</li>
-        </ul>
-    </footer>
+  <header>
+    <h1>Propsik SMP</h1>
+    <p>All custom items and their recipes.</p>
+  </header>
+  <main>
+    <div class="item">
+      <h2>Lifesteal Sword</h2>
+      <p>Kill a player and steal their heart! If said player has 1 heart they get banned.</p>
+      <div class="recipe">
+        <div class="grid">
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot" title="Netherite Ingot"><img src="resources/netheriteIngot.webp"></div>
+          <div class="slot" title="Redstone Block"><img src="resources/redstoneBlock.webp"></div>
+          <div class="slot" title="Heart Core"><img src="resources/redDye.webp"></div>
+          <div class="slot"></div>
+          <div class="slot" title="Breeze Rod"><img src="resources/breezeRod.webp"></div>
+          <div class="slot" title="Redstone Block"> <img src="resources/redstoneBlock.webp"></div>
+          <div class="slot"></div>
+        </div>
+        <div class="arrow">➡</div>
+        <div class="output-slot">
+          <div class="slot" title="Lifesteal Sword"><img src="resources/enchantedNetheriteSword.webp"></div>
+          <div class="output-name">Lifesteal Sword</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <h2>Heart Core</h2>
+      <p>Used to make the Lifesteal Sword</p>
+      <div class="recipe">
+        <div class="grid">
+          <div class="slot"></div>
+          <div class="slot" title="Any Player Head"><img src="resources/playerHead.webp"></div>
+          <div class="slot"></div>
+          <div class="slot" title="Any Player Head"><img src="resources/playerHead.webp"></div>
+          <div class="slot" title="Totem of Undying"> <img src="resources/totemOfUndying.webp"></div>
+          <div class="slot" title="Any Player Head"><img src="resources/playerHead.webp"></div>
+          <div class="slot"></div>
+          <div class="slot" title="Any Player Head"><img src="resources/playerHead.webp"></div>
+          <div class="slot"></div>
+        </div>
+        <div class="arrow">➡</div>
+        <div class="output-slot">
+          <div class="slot" title="Heart Core"><img src="resources/redDye.webp"></div>
+          <div class="output-name">Heart Core</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="item">
+      <h2>Toxic Dagger</h2>
+      <p>15% Chance to give your opponent Slowness 4 and Wither 3!</p>
+      <div class="recipe">
+        <div class="grid">
+          <div class="slot"></div>
+          <div class="slot"></div>
+          <div class="slot" title="Netherite Ingot"><img src="resources/netheriteIngot.webp"></div>
+          <div class="slot" title="Echo Shard"><img src="resources/echoShard.webp"></div>
+          <div class="slot" title="Wither Rose"><img src="resources/witherRose.webp"></div>
+          <div class="slot"></div>
+          <div class="slot" title="Breeze Rod"><img src="resources/breezeRod.webp"></div>
+          <div class="slot" title="Echo Shard"><img src="resources/echoShard.webp"></div>
+          <div class="slot"></div>
+        </div>
+        <div class="arrow">➡</div>
+        <div class="output-slot">
+          <div class="slot" title="Toxic Dagger"><img src="resources/enchantedNetheriteSword.webp"></div>
+          <div class="output-name">Toxic Dagger</div>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
